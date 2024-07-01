@@ -10,19 +10,20 @@
 
   <script>
   function getParameterByName(name, url = window.location.href) {
-      name = name.replace(/[\[\]]/g, '\\$&');
-      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-          results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      return location.href.split("https://gurkanakdeniz.github.io/m3u8-opener-page/?")[1];
+      // name = name.replace(/[\[\]]/g, '\\$&');
+      // var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      //    results = regex.exec(url);
+      // if (!results) return null;
+      // if (!results[2]) return '';
+      //return decodeURIComponent(results[2].replace(/\+/g, ' '));
   }
 
   document.write('<video id="my-video" class="video-js" controls preload="auto" width="1366" height="768" controls data-setup="{}"> <source id="video-source" src="' 
     + getParameterByName("url") + '" type="application/x-mpegURL"/></video>');
   </script>
   <body>
-    <p>example url : https://gurkanakdeniz.github.io/m3u8-opener-page?url=https://sample.m3u8</p>
+    <p>example url : https://gurkanakdeniz.github.io/m3u8-opener-page/?https://sample.m3u8</p>
 
   </body>
 </html>
